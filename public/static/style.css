@@ -127,3 +127,16 @@ body {background: #fff url(images/bodybg.jpg) left -30px repeat-x; font-family:V
 .post h4 {font:bold 1.4em "Trebuchet MS", Arial, Helvetica, sans-serif; color:#000; margin-bottom:10px;}
 .post h2 {display:block; font:1.8em "Trebuchet MS", Arial, Helvetica, sans-serif; color:#000;}
 .post a:hover {color:#000; text-decoration:underline;}
+
+.post dl dt {
+    font:bold 1.4em "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color:#000;
+    line-height:18px;
+    margin-bottom:12px;
+}
+.post dl dd {
+    font-size:1.2em;
+    line-height:18px;
+    padding-left:20px;
+    margin-bottom:10px;
+}
