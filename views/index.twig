@@ -1,5 +1,5 @@
 {% extends "layout.twig" %}
-{% block title %}{{ current.id }}º PHPMG Talks{% endblock %}
+{% block title %}{{ current.id }}º PHP-MG Talks{% endblock %}
 
 {% block slideshow %}
     {% if slideshow %} 
@@ -15,9 +15,7 @@
 
     <h2 class="mainheading">{{ current.id }}º PHPMG Talks</h2>
     <ul class="summary">
-        {% if current.subject %}
-            <li><a href="#tema">Tema</a></li>
-        {% endif %}
+        <li><a href="#tema">Informações</a></li>
         <li><a href="#quando">Quando</a></li>
         <li><a href="#programacao">Programação</a></li>
         <li><a href="#investimento">Investimento</a></li>
@@ -27,12 +25,10 @@
         <li><a href="#comentarios">Comentários</a></li>
     </ul>
 
-    {% if current.subject %}
     <article class="post"> 
         <h2 id="tema">Tema</h2>
-        <p>{{ current.subject|nl2br }}</p>
+        {{ current.informations|raw }}
     </article>
-    {% endif %}
     
     <article class="post"> 
         <h2 id="quando">Quando</h2>
@@ -116,7 +112,11 @@
 
 {% block sidebar %}
     <h2>O que é?</h2>
-    <p>Um encontro informal para curtas apresentações e debates técnicos sobre PHP e qualquer tecnologia relacionada ao universo do PHP. O evento é aberto a comunidade e qualquer um está convidado a trazer um tema para apresentar para a comunidade.</p>
+    <p>
+        O Talks é um encontro informal para curtas apresentações e debates técnicos sobre PHP e tecnologias relacionadas, geralmente com um tema especifico.
+        <br />
+        A principal ideia do evento é trazer a comunidade para discutir e conhecer novas tecnologias e abordagens.
+    </p>
 
     <h2>Edições</h2>
     {% if editions %}
@@ -141,9 +141,9 @@
     <!-- ul class="sponsors" -->
         {% for sponsor in sponsors %}        
             <a href="{{ sponsor.link }}" target="_BLANK" title="{{ sponsor.name }}">
-	        <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" />
-	    </a>
-	    <br />
+                <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" />
+            </a>
+            <br />
         {% endfor %}        
     <!-- /ul -->
     {% endif %}
